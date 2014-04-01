@@ -5,13 +5,23 @@ module SpreeCoinbaseBitcoinPayment
       class_option :auto_run_migrations, :type => :boolean, :default => false
 
       def add_javascripts
-        append_file 'app/assets/javascripts/store/all.js', "//= require store/spree_coinbase_bitcoin_payment\n"
-        append_file 'app/assets/javascripts/admin/all.js', "//= require admin/spree_coinbase_bitcoin_payment\n"
+        frontend_js_file = "vendor/assets/javascripts/spree/frontend/all.js"
+        backend_js_file = "vendor/assets/javascripts/spree/backend/all.js"
+
+        if File.exist?(backend_js_file) && File.exist?(frontend_js_file)
+          append_file frontend_js_file, "//= require spree/frontend/spree_coinbase_bitcoin_payment\n"
+          append_file frontend_css_file, "//= require spree/backend/spree_coinbase_bitcoin_payment\n"
+        end
       end
 
       def add_stylesheets
-        inject_into_file 'app/assets/stylesheets/store/all.css', " *= require store/spree_coinbase_bitcoin_payment\n", :before => /\*\//, :verbose => true
-        inject_into_file 'app/assets/stylesheets/admin/all.css', " *= require admin/spree_coinbase_bitcoin_payment\n", :before => /\*\//, :verbose => true
+        frontend_css_file = "vendor/assets/stylesheets/spree/frontend/all.css"
+        backend_css_file = "vendor/assets/stylesheets/spree/backend/all.css"
+
+        if File.exist?(backend_css_file) && File.exist?(frontend_css_file)
+          inject_into_file frontend_css_file, " *= require spree/frontend/spree_coinbase_bitcoin_payment\n", :before => /\*\//, :verbose => true
+          inject_into_file backend_css_file, " *= require spree/backend/spree_coinbase_bitcoin_payment\n", :before => /\*\//, :verbose => true
+        end
       end
 
       def add_migrations

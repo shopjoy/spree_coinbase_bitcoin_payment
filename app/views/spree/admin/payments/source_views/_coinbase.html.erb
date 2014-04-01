@@ -1,0 +1,21 @@
+<fieldset data-hook="coinbase">
+  <legend align="center"><%= Spree.t(:transaction, :scope => :coinbase) %></legend>
+
+  <div class="row">
+    <div class="alpha six columns">
+      <dl>
+        <dt><%= Spree.t(:coinbase_id, :scope => :coinbase) %>:</dt>
+        <dd><%= payment.source.coinbase_id %></dd>
+
+        <dt><%= Spree.t(:status, :scope => :coinbase) %>:</dt>
+        <dd><%= payment.source.status %></dd>
+
+        <dt><%= Spree.t(:btc_cents, :scope => :coinbase) %>:</dt>
+        <dd><%= payment.source.btc_cents %></dd>
+
+        <dt><%= Spree.t(:receive_address, :scope => :coinbase) %>:</dt>
+        <dd><%= payment.source.receive_address %></dd>
+      </dl>
+    </div>
+  </div>
+</fieldset>
