@@ -1,7 +1,8 @@
 SpreeCoinbaseBitcoinPayment
 ===========================
 
-Introduction goes here.
+Want to accept Bitcoin on your Spree Commerce shopfront?
+This extension integrates with Coinbase to enable Bitcoin payment on your Spree Commerce site.
 
 Installation
 ------------
@@ -18,6 +19,12 @@ Bundle your dependencies and run the installation generator:
 bundle
 bundle exec rails g spree_coinbase_bitcoin_payment:install
 ```
+
+Configuration
+-------------
+
+Don't forget to enter your Coinbase *API key* and *API secret* on your shop's admin area for configuring
+this payment method.
 
 Testing
 -------
@@ -37,4 +44,4 @@ Simply add this require statement to your spec_helper:
 require 'spree_coinbase_bitcoin_payment/factories'
 ```
 
-Copyright (c) 2014 [name of extension creator], released under the New BSD License
+Copyright (c) 2014 ShopJoy Australia, released under the New BSD License
