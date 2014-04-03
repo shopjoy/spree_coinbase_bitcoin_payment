@@ -4,6 +4,9 @@ SpreeCoinbaseBitcoinPayment
 Want to accept Bitcoin on your Spree Commerce shopfront?
 This extension integrates with Coinbase to enable Bitcoin payment on your Spree Commerce site.
 
+**Compatibility notes:** this extension is written for Spree 2.1.x, probably not compatible with
+newer versions of Spree.
+
 Installation
 ------------
 
