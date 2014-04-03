@@ -5,9 +5,9 @@ SpreeCoinbase = {
     if ( (paymentMethod.val() == SpreeCoinbase.paymentMethodID) ||
          (typeof SpreePaypalExpress === 'object' && paymentMethod.val() == SpreePaypalExpress.paymentMethodID)
        ) {
-      $('.continue').hide();
+      $('#checkout_form_payment .continue').hide();
     } else {
-      $('.continue').show();
+      $('#checkout_form_payment .continue').show();
     }
   }
 };
